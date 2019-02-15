@@ -1,0 +1,111 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link href="css/login.css" rel="stylesheet">
+
+    <style>
+
+        /* body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+} */
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <span id="error"></span>
+
+    <div class="container">
+        <div class="card card-container">
+
+            <img src="./logo.jpg" class="profile-img-card" alt="logo">
+            <p id="profile-name" class="profile-name-card"></p>
+            <p class="text-center">Login to your account</p>
+
+            <form class="form-signin" id="userLogin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
+            </form><!-- /form -->
+            <span class="glyphicon glyphicon-lock"></span>
+            <a href="forgetpassword.html" class="forgot-password">
+                Forgotpassword?
+            </a>
+        </div><!-- /card-container -->
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#userLogin").submit(function (event) {
+                event.preventDefault();
+                ajaxPost();
+
+            });
+
+            function ajaxPost() {
+
+                // PREPARE FORM DATA
+                var formData = {
+                    email: $("#inputEmail").val(),
+                    password: $("#inputPassword").val()
+
+                }
+
+                console.log(formData.email, formData.password);
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "http://localhost:8080/usermanagement/login",
+
+                    data: JSON.stringify(formData),
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Accept", "application/json");
+                        xhr.setRequestHeader("Content-Type", "application/json");
+                        
+                    },
+                    success: function (result) {
+                        console.log(result)
+                        if (result.status == "done") {
+                            console.log(result.status)
+                            location.href = "file:///home/bridgelabz/Downloads/startbootstrap-simple-sidebar-master/homepage.html"
+
+                        }
+                        else if (result.status == "not valid") {
+                            console.log("error")
+                            $('#error').html(
+
+                               "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> This alert box could indicate a neutral informative change or action.</div></div>");
+
+                        }
+                    },
+                    error: function (e) {
+                        $("#getResultDiv").html("<strong>Error</strong>");
+                        console.log("ERROR: ", e);
+                    }
+                });
+            }
+        })
+
+
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>

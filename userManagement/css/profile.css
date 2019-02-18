@@ -175,3 +175,11 @@
 body{
     background-color: rgb(243, 243, 243);
 }
+
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}

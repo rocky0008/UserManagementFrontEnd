@@ -39,6 +39,7 @@
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    
 }
 
 /*
@@ -50,6 +51,7 @@
     text-align: center;
     margin: 10px 0 0;
     min-height: 1em;
+
 }
 
 .reauth-email {
@@ -120,5 +122,5 @@
 }
 
 .forgot-password {
-    color: rgb(104, 145, 162);
+    color: rgb(31, 185, 251);
 }

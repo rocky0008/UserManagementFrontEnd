@@ -38,7 +38,7 @@ $(document).ready(function () {
                     console.log("error")
                     $('#error').html(
 
-                       "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> This alert box could indicate a neutral informative change or action.</div></div>");
+                       "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Invalid UserName And Password.</div></div>");
 
                 }
             },

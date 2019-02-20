@@ -2,20 +2,9 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <link href="css/login.css" rel="stylesheet">
-
-    <style>
-
-        /* body, html {
-    height: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
-} */
-
-
-    </style>
 
 
 </head>
@@ -27,23 +16,34 @@
     <span id="error"></span>
 
     <div class="container">
-        <div class="card card-container">
+        <div class="card card-container" style="background-color: white">
 
             <img src="./logo.jpg" class="profile-img-card" alt="logo">
             <p id="profile-name" class="profile-name-card"></p>
-            <p class="text-center">Login to your account</p>
+            <p class=" text-center " style=" font-size :20px ; color: #5e6773">Login to your account</p>
 
-            <form class="form-signin" id="userLogin">
+
+
+            
+                    <form class="form-signin"  id="addUser" onsubmit="return checkForm(this);">
+
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input title="Email is required" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+                            autofocus>
+                    </div>
+                </div>
+                <input title="Password is Required" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-                 <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
+                <button class="btn btn-lg btn-info btn-block" type="submit">LOGIN</button>
             </form><!-- /form -->
-            <span class="glyphicon glyphicon-lock"></span>
-            <a href="forgetpassword.html" class="forgot-password">
-                Forgotpassword?
-            </a>
+            <div class="d-flex justify-content-lg-center">
+                <span style="padding-left: 50px" class="glyphicon glyphicon-lock"></span>
+                <a href="forgetpassword.html" class="forgot-password">
+                    Forgot Password?
+                </a>
+            </div>
         </div><!-- /card-container -->
     </div>
 

@@ -20,35 +20,36 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+
+                    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
 
-                    </button>
+                    </button> -->
                     <div class="navbar-brand">
 
 
-                        <a id="menu-toggle" class="active">
-
-                            <p>
-                                user Management
-
-                                <span class="glyphicon glyphicon-align-justify btn-menu toggle"></span>
-                            </p>
-                        </a>
+                        <p style="color : white">
+                            User Management
+                        </p>
                     </div>
+                    <a id="menu-toggle" data-toggle="collapsed" class="active" style="padding-top: 5px ;padding-left : 25px">
+                        <span class=" glyphicon glyphicon-chevron-right"></span>
+                        <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
+                    </a>
+
                     <!-- <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul> -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                                </ul> -->
                 </div>
             </div>
         </nav>
@@ -72,7 +73,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-user-plus"></i>Profile</a>
+                        <a href="profile.html"><i class="fa fa-fw fa-user-plus"></i>Profile</a>
                     </li>
 
                     <li>
@@ -248,10 +249,22 @@
             });
         })
 
+   
+
+
         $("#menu-toggle").click(function (e) {
 
             e.preventDefault();
             $("#wrapper").toggleClass("active");
+            $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $(".collapsed").on("hide.bs.collapsed", function () {
+                $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
+            });
+            $('.collapsed').on("show.bs.collapse", function () {
+                $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
+            });
+        })
         });
 
     </script>

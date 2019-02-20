@@ -175,3 +175,17 @@
 body{
     background-color: rgb(243, 243, 243);
 }
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  .half-rule { 
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+    color:#1a242f 
+ }

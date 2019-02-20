@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#addUser").submit(function (event) {
         event.preventDefault();
@@ -12,7 +13,7 @@ $(document).ready(function () {
             firstName: $("#firstName").val(),
             lastName: $("#lastName").val(),
             middleName: $("#middleName").val(),
-            dateOfBirth: $("#dateOfBirth").val(),
+            dateOfBirth: $("#datepicker").val(),
             gender: $("#gender").val(),
             country: $("#country").val(),
             phoneNumber: $("#phoneNumber").val(),
@@ -75,3 +76,48 @@ $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("active");
 });
+
+
+// $(".toggle-password").click(function() {
+
+//     $(this).toggleClass("fa-eye fa-eye-slash");
+//     var input = $($(this).attr("toggle"));
+//     console.log(input);
+    
+//     if (input.attr("type") == "password") 
+//     {
+//       input.attr("type", "text");
+    
+//     }
+//     else
+//     {
+//       input.attr("type", "password");
+//     }
+//   });
+
+
+    $(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input=document.getElementById("password");
+    console.log(input);
+    
+    if(input.type==="password")
+         input.type="text"
+    else
+          input.type="password"
+    });
+
+    $(".toggle-confirmPassword").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input=document.getElementById("confirmPassword");
+        console.log(input);
+        
+        if(input.type==="password")
+             input.type="text"
+        else
+              input.type="password"
+        });
+
+

@@ -47,7 +47,7 @@ $(document).ready(function () {
                 if (result.status == "done") 
                 {
                   console.log(result.status)
-                  location.href = "file:///home/bridgelabz/userManagement/user.html"
+                  location.href = "file:///home/bridgelabz/userManagement/html/user.html"
 
                 }
             },

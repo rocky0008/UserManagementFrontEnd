@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#userLogin").submit(function (event) {
+    $("#recoverPassword").submit(function (event) {
         event.preventDefault();
         ajaxPost();
 
@@ -8,19 +8,19 @@ $(document).ready(function () {
     function ajaxPost() {
 
         // PREPARE FORM DATA
-        var formData = {
+        var recoverPassword = {
             email: $("#inputEmail").val(),
-            password: $("#inputPassword").val()
+           
 
         }
 
-        console.log(formData.email, formData.password);
+        console.log(recoverPassword.email);
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "http://localhost:8080/usermanagement/login",
+            url: "http://localhost:8080/usermanagement/forgotPassword?email="+recoverPassword.email,
 
-            data: JSON.stringify(formData),
+            data: JSON.stringify(recoverPassword),
             dataType: 'json',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Accept", "application/json");
@@ -29,16 +29,16 @@ $(document).ready(function () {
             },
             success: function (result) {
                 console.log(result)
-                if (result.status == "done") {
+                if (result.status == "Your password has been send again to your Registered Email") {
                     console.log(result.status)
-                    location.href = "file:///home/bridgelabz/userManagement/html/homepage.html"
+                    location.href = "file:///home/bridgelabz/userManagement/html/login.html"
 
                 }
-                else if (result.status == "not valid") {
+                else if (result.status == "You have to create Accountnot valid") {
                     console.log("error")
                     $('#error').html(
 
-                       "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Invalid UserName And Password.</div></div>");
+                       "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Oops,You dont have an Account!! </div></div>");
 
                 }
             },

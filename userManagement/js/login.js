@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#userLogin").submit(function (event) {
         event.preventDefault();
         ajaxPost();
-
+        //  showMessage(data);
     });
 
     function ajaxPost() {
@@ -13,6 +13,17 @@ $(document).ready(function () {
             password: $("#inputPassword").val()
 
         }
+        var d = new Date(),
+            minutes = d.getMinutes().toString().length == 1 ? '0' + d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0' + d.getHours() : d.getHours(),
+            ampm = d.getHours() >= 12 ? 'pm' : 'am',
+            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var Ddate = days[d.getDay()] + ' ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + hours + ':' + minutes + ampm;
+        console.log(Ddate);
+
+
+
 
         console.log(formData.email, formData.password);
         $.ajax({
@@ -22,31 +33,60 @@ $(document).ready(function () {
 
             data: JSON.stringify(formData),
             dataType: 'json',
+            // onsuccess : "showMessage",
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Accept", "application/json");
                 xhr.setRequestHeader("Content-Type", "application/json");
-                
+
             },
             success: function (result) {
                 console.log(result)
                 if (result.status == "done") {
                     console.log(result.status)
-                    location.href = "file:///home/bridgelabz/userManagement/html/homepage.html"
+
+                    console.log(Ddate);
+
+                    // document.getElementById('date').innerHTML = formatAMPM();
+
+                    // function formatAMPM() {
+                    //     var d = new Date(),
+                    //         minutes = d.getMinutes().toString().length == 1 ? '0' + d.getMinutes() : d.getMinutes(),
+                    //         hours = d.getHours().toString().length == 1 ? '0' + d.getHours() : d.getHours(),
+                    //         ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                    //         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    //         days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                    //     return days[d.getDay()] + ' ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + hours + ':' + minutes + ampm;
+                    // }
+
+
+                    // jQuery.load("file:///home/bridgelabz/userManagement/html/homepage.html",function(){
+                    // jQuery("#date").html(date);
+                    // });
+                    //document.getElementById('date').innerHTML = date;
+
+                    location.href = "file:///home/bridgelabz/userManagement/html/homepage.html";
+
 
                 }
                 else if (result.status == "not valid") {
                     console.log("error")
                     $('#error').html(
 
-                       "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Invalid UserName And Password.</div></div>");
+                        "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Invalid UserName And Password.</div></div>");
 
                 }
             },
+
             error: function (e) {
                 $("#getResultDiv").html("<strong>Error</strong>");
                 console.log("ERROR: ", e);
             }
         });
     }
+    // function showMessage(data)
+    // {
+    //     $('#userLogin').html('Successfully Submitted');
+
+    // }
 })
 

@@ -1,0 +1,245 @@
+<html>
+
+<head>
+    <title>Users List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script language="javascript" type="text/javascript"></script>
+
+    <link href="../css/userlist.css" rel="stylesheet">
+
+
+</head>
+
+<body style=" background-color: rgb(244, 246, 249)">
+
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                                aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+        
+                            </button> -->
+                    <div class="navbar-brand">
+
+
+                        <p style="color : white">
+                            User Management
+                        </p>
+                    </div>
+                    <a id="menu-toggle" data-toggle="collapsed" class="active" style="padding-top: 5px ;padding-left : 25px">
+                        <span class=" glyphicon glyphicon-chevron-right"></span>
+                        <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
+                    </a>
+
+                    <!-- <ul class="nav navbar-nav navbar-right">
+        
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                                                <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        </ul> -->
+                </div>
+            </div>
+        </nav>
+        <div id="side-wrapper" class="active">
+            <nav id="spy">
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+                <ul class="side-nav nav">
+                    <li>
+                        <a href="./homepage.html"><i class="fa fa-fw fa fa-question-circle"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i>
+                            User <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="./user.html"></i>New User</a></li>
+                            <li><a href="./userslist.html"></i> User List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./profile.html"><i class="fa fa-fw fa-user-plus"></i>Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="./login.html"><i class="fa fa-fw fa-paper-plane-o"></i>Logout</a>
+                    </li>
+
+                </ul>
+
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div id="page-content-wrapper" style="padding-top: 10px">
+
+                <!-- <div class="row">
+                        <div class="col-md-12">
+                            <div class="list-group">
+                                <h1 class="list-group-item-heading"> Welcome Admin Admin</h1>
+                                <p class="list-group-item-text">
+                                    you last logged in on:
+                                </p>
+                            </div>
+                        </div>
+                    </div> -->
+                <div class="row" style="padding-left: 0px">
+                    <div class="well" style=" padding-top:80px ; background-color: white">
+                        <p style="text-align:left;">Users
+
+                            <span style="float:right;">
+                                <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>Users
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div id="page-content-wrapper" style="padding-top: 10px">
+
+                        <!-- <div class="row">
+                                <div class="col-md-12">
+                                    <div class="list-group">
+                                        <h1 class="list-group-item-heading"> Welcome Admin Admin</h1>
+                                        <p class="list-group-item-text">
+                                            you last logged in on:
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <!-- <div class="row" style="padding-left: 0px">
+                            <div class="well" style=" padding-top:20px ; background-color: white">
+                                <button class="btn btn-info" style="height: 10px;"> New User</button>
+                            </div>
+
+                            <div class="row" style="padding-left: 15px; padding-right: 15px">
+                                <div class="well" style=" padding-top:80px ; background-color: white">
+                                 
+
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <th>Sl.No</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Dob</th>
+                                            <th>status</th>
+                                            <th>Role </th>
+                                            <th>Account</th>
+                                            <th>Action</th>
+                                        </thead>
+                                        <tbody id="data">
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="well" style="height: 60px">
+                            <!-- <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        hihihih -->
+                            <span>
+                                <button class="btn btn-info glyphicon glyphicon-user col-xs-2">New User</button>
+                            </span>
+                            <!-- </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="row" style="padding-left: 15px; padding-right: 15px">
+                            <div class="well" style=" padding-top:80px ; background-color: white">
+
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <th>Sl.No</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Dob</th>
+                                        <th>status</th>
+                                        <th>Role </th>
+                                        <th>Account</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody id="data">
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $(".side-nav .collapse").on("hide.bs.collapse", function () {
+                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
+            });
+            $('.side-nav .collapse').on("show.bs.collapse", function () {
+                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
+            });
+        })
+
+
+
+
+        $("#menu-toggle").click(function (e) {
+
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+                $(".collapsed").on("hide.bs.collapsed", function () {
+                    $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
+                });
+                $('.collapsed').on("show.bs.collapse", function () {
+                    $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
+                });
+            })
+        });
+
+        // window.onload = function () {
+        //     var url = document.location.href,
+        //         params = url.split('?')[1].split('&'),
+        //         data = {}, tmp;
+        //     for (var i = 0, l = params.length; i < l; i++) {
+        //         tmp = params[i].split('=');
+        //         data[tmp[0]] = tmp[1];
+        //     }
+        //     console.log(data.name);
+
+        //     document.getElementById('date').innerHTML = data.name;
+        // }
+
+    </script>
+</body>
+
+</html>

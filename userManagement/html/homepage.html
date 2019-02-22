@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script language="javascript" type="text/javascript" src="../js/login.js"></script>
+
     <link href="../css/homepage.css" rel="stylesheet">
 
 
@@ -69,7 +71,7 @@
                             User <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                         <ul id="submenu-1" class="collapse">
                             <li><a href="./user.html"></i>New User</a></li>
-                            <li><a href="#"></i> User List</a></li>
+                            <li><a href="./userslist.html"></i> User List</a></li>
                         </ul>
                     </li>
                     <li>
@@ -129,7 +131,9 @@
                 <div class="row" style="padding-left: 0px">
                     <div class="well" style=" padding-top:80px ; background-color: white">
                         <p style="text-align:left;">Welcome Admin Admin
-                            <p> you last logged in on:</p>
+                            <div class="clearfix"></div>
+                            you last logged in on:
+                            <span id="date"></span>
                             <span style="float:right;">
                                 <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>Dashboard
                             </span>
@@ -249,7 +253,7 @@
             });
         })
 
-   
+
 
 
         $("#menu-toggle").click(function (e) {
@@ -257,15 +261,28 @@
             e.preventDefault();
             $("#wrapper").toggleClass("active");
             $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".collapsed").on("hide.bs.collapsed", function () {
-                $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
-            });
-            $('.collapsed').on("show.bs.collapse", function () {
-                $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
-            });
-        })
+                $('[data-toggle="tooltip"]').tooltip();
+                $(".collapsed").on("hide.bs.collapsed", function () {
+                    $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
+                });
+                $('.collapsed').on("show.bs.collapse", function () {
+                    $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
+                });
+            })
         });
+
+        // window.onload = function () {
+        //     var url = document.location.href,
+        //         params = url.split('?')[1].split('&'),
+        //         data = {}, tmp;
+        //     for (var i = 0, l = params.length; i < l; i++) {
+        //         tmp = params[i].split('=');
+        //         data[tmp[0]] = tmp[1];
+        //     }
+        //     console.log(data.name);
+            
+        //     document.getElementById('date').innerHTML = data.name;
+        // }
 
     </script>
 </body>

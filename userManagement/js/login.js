@@ -1,3 +1,5 @@
+import { get } from "http";
+
 $(document).ready(function () {
     $("#userLogin").submit(function (event) {
         event.preventDefault();
@@ -37,11 +39,20 @@ $(document).ready(function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Accept", "application/json");
                 xhr.setRequestHeader("Content-Type", "application/json");
-
+                // HttpServletRequest.setRequestHeader ;
+            
             },
+            
+            //     Headers
+            //     {
+            //         "token" = "";
+            //     }
+            // },
+          
             success: function (result) {
-                console.log(result)
-                if (result.status == "done") {
+                console.log(result.token);
+                
+                if (result.status == "done" && result.token) {
                     console.log(result.status)
 
                     console.log(Ddate);
@@ -63,7 +74,7 @@ $(document).ready(function () {
                     // jQuery("#date").html(date);
                     // });
                     //document.getElementById('date').innerHTML = date;
-
+                    localStorage.setItem('token',result.token);
                     location.href = "file:///home/bridgelabz/userManagement/html/homepage.html";
 
 
@@ -76,10 +87,12 @@ $(document).ready(function () {
 
                 }
             },
+            
 
             error: function (e) {
-                $("#getResultDiv").html("<strong>Error</strong>");
-                console.log("ERROR: ", e);
+                $('#error').html(
+
+                    "<div class=container><h2>Alerts</h2><div class=alert alert-danger><strong>Info!</strong> Invalid UserName And Password.</div></div>");
             }
         });
     }
@@ -89,4 +102,6 @@ $(document).ready(function () {
 
     // }
 })
+ 
+
 

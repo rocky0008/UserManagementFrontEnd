@@ -1,66 +1,65 @@
 <html>
-    <head>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="./css/dummyprofile.css" rel="stylesheet">
 
-    </head>
-    <body>
+<head>
 
-            <div class="container">
-                    <div class="row">
-                        <h2>Create your snippet's HTML, CSS and Javascript in the editor tabs</h2>
-                    </div>
-                </div>
-                
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+    <link href="./css/dummyprofile.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+
+</head>
+
+<body>
+ 
+        <body  style=" background-color: rgb(244, 246, 249)">
+
+
+
+                <span id="error"></span>
+            
                 <div class="container">
-                <div class="col-4-md">
-                    <div class="image-uploader" data-base-height="250" data-base-width="250">
-                        <div class="image">
-                            <label>Click or drag a file to change your image</label>
-                            <img />
-                        </div>
-                        <input id="uploader" type="file" />
-                        <div class="zoom" style="display:none;">
-                            <div class="plus"></div>
-                            <div class="minus"></div>
-                            <div class="close"></div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-4-md">
-                    <div class="image-uploader" data-base-height="150" data-base-width="150">
-                        <div class="image">
-                            <label>Click or drag a file to change your image</label>
-                            <img />
-                        </div>
-                        <input id="uploader" type="file" />
-                        <div class="zoom" style="display:none;">
-                            <div class="plus"></div>
-                            <div class="minus"></div>
-                            <div class="close"></div>
-                        </div>
-                    </div>
-                  </div>
-                    <div class="col-4-md">
-                    <div class="image-uploader" data-base-height="150" data-base-width="350">
-                        <div class="image">
-                            <label>Click or drag a file to change your image</label>
-                            <img />
-                        </div>
-                        <input id="uploader" type="file" />
-                        <div class="zoom" style="display:none;">
-                            <div class="plus"></div>
-                            <div class="minus"></div>
-                            <div class="close"></div>
-                        </div>
-                    </div></div>
+                    <div class="card card-container"  style="background-color: white ; width: 1000px; height: 400px;">
+            
+                        <img src="../logo.jpg" class="profile-img-card" alt="logo">
+                        <p id="profile-name" class="profile-name-card"></p>
+                        <p class=" text-center " style=" font-size :20px ; color: #5e6773">Login to your account</p>
+            
+            
+            
+            
+                        <form class="form-signin" id="userLogin">
+            
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                        <input type="email" class="form-control" name="email" autocomplete="off" id="inputEmail"
+                                        placeholder="E-mail">
+                                </div>
+                            </div>
+                
+                                <input type="password" class="form-control" name="password" autocomplete="off" id="inputPassword"
+                                placeholder="Password">
+            
+                            <button class="btn btn-lg btn-info btn-block" type="submit"> LOGIN</button>
+                        </form><!-- /form -->
+                        <div class="d-flex justify-content-lg-center">
+                                <span class="glyphicon glyphicon-lock"></span>
+                                <a href="./forgetpassword.html" class="forgot-password">
+                                    Forgot Password?
+                                </a>
+                            </div>
+                    </div><!-- /card-container -->
                 </div>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="../js/dummy.js"></script>
+            
+            
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    </body>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+   
+    <script src="./js/dummy.js"></script>
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+</body>
+
 </html>
-
-<!------ Include the above in your HEAD tag ---------->
-

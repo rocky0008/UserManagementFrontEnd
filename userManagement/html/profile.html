@@ -6,12 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-    <link href="../css/profile.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
 
 </head>
 
-<body>
+<body onload=myFunction()>
+
+
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -23,40 +24,39 @@
                         <span class="sr-only">Toggle navigation</span>
 
                     </button>
-                    <!-- <div class="navbar-brand">
-
-
-                        <a id="menu-toggle" class="active">
-
-                            <p>
-                                user Management
-
-                                <span class="glyphicon glyphicon-align-justify btn-menu toggle"></span>
-                            </p>
-                        </a>
-                    </div> -->
                     <div class="navbar-brand">
 
-
-                        <p style="color : white">
+                        <p style="color: white">
                             User Management
                         </p>
                     </div>
-                    <a id="menu-toggle" class="active" style="padding-top: 5px ;padding-left : 25px">
-                            <span class=" glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                    <a id="menu-toggle" class="active"style="padding-top: 5px ;padding-left : 25px">
+                        <i id="left" class="fa fa-chevron-right"></i>
+                        <!-- <i class="material-icons" >
+                                keyboard_arrow_left
+                               
+                              <span>  <i class="material-icons">radio_button_unchecked</i></span>
+                            </i> -->
+                        <!-- <span
+                            class="icon-stack">
+                            <svg-icon>
+                                <src href="sprite.svg#si-glyph-button-arrow-right" />
+                            </svg-icon> <i class="glyphicon glyphicon-ok"></i>
+                        </span> -->
+
+                    </a>
+
                     <!-- <ul class="nav navbar-nav navbar-right">
-        
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
                 </div>
             </div>
         </nav>
@@ -67,122 +67,387 @@
 
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
-                        <ul class="side-nav nav">
-                                <li>
-                                    <a style="color: white" href="./homepage.html"><span class="glyphicon glyphicon-dashboard
-                                        " ></span>
-                                        <span style="padding-left: 5px"> Dashboard</span></a>
-            
-                                </li>
-                                <li>
-                                    <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span class="glyphicon glyphicon-user
-                                        "></span>
-                                       <span style="padding-left: 5px">User</span>  <i class="fa fa-fw fa-angle-down pull-right" style="padding-left: 25px"></i></a>
-                                    <ul id="submenu-1" class="collapse">
-                                        <li><a href="./user.html"></i>New User</a></li>
-                                        <li><a href="./userslist.html"></i> User List</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a style="color: white" href="./profile.html"><span class="glyphicon glyphicon-user
-                                        "></span>
-                                        <span style="padding-left: 5px">Profile</span></a>
-                                </li>
-            
-                                <li>
-                                    <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
-                                        "></span>
-                                        <span style="padding-left: 5px"> Logout</span></a>
-                                </li>
-            
-                            </ul>
+                <ul class="side-nav nav">
+                    <li>
+                        <a style="color: white" href="./homepage.html"><span class="glyphicon glyphicon-dashboard
+                                "></span>
+                            <span style="padding-left: 5px"> Dashboard</span></a>
+
+                    </li>
+                    <li>
+                        <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span class="glyphicon glyphicon-user
+                                "></span>
+                            <span style="padding-left: 5px">User</span> <i class="fa fa-fw fa-angle-down pull-right"
+                                style="padding-left: 25px"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="./user.html"></i>New User</a></li>
+                            <li><a href="./userslist.html"></i> User List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="color: white" href="./profile.html"><span class="glyphicon glyphicon-user
+                                "></span>
+                            <span style="padding-left: 5px">Profile</span></a>
+                    </li>
+
+                    <li>
+                        <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
+                                "></span>
+                            <span style="padding-left: 5px" id=""> Logout</span></a>
+                    </li> 
+
+                </ul>
 
                 <!-- /.navbar-collapse -->
             </nav>
         </div>
-        <div class="container-fluid">
-            <div id="page-content-wrapper" style="padding-top: 10px">
+
+
+        <!-- /#page-wrapper -->
+
+
+        <div class="container-fluid ">
+            <div id="page-content-wrapper" style="padding-top:10px; ">
                 <div class="page-content">
-                    <div class="row">
-                        <div class="well" style=" padding-top:80px; background-color: white">
+
+                    <div class="row" style="padding-left: 0px">
+                        <div class="well" style=" padding-top:80px ; background-color: white">
                             <p style="text-align:left;">Profile
-                                <p> you last logged in on:</p>
+                                <div class="clearfix"></div>
+                                you last logged in on:
+                                <span id="date"></span>
                                 <span style="float:right;">
-                                    <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>profile
+                                    <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>Profile
                                 </span>
                             </p>
-
+    
                         </div>
                     </div>
-                    <div class="panel">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <img src="../photo/admin.jpg" style="width: 350px;height : 232px" alt="..." class="rounded-top">
+    
+    
 
-                                <label> Basic Info</label>
-                                <div class="clearfix"></div>
+                    <div class="panel col-xs-12 col-sm-6 col-md-12">
 
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <label>Email</label>
+                        <div class="row ">
+
+                            <div class="col-xs-12 col-sm-6 col-md-5">
+                                <!-- <img src="photos/sowndar1.jpg" style="width:351px;height:230px;"> -->
+
+                                <div class="card hovercard">
+                                    <div class="cardheader">
+
                                     </div>
-                                    <div class="col-xs-6">
-                                        <p>admin@gmail.com</p>
+                                    <div class="avatar">
+                                        <img src="../photo/admin.jpg">
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <span id="userName"></span></a>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <label>UserName</label>
-                                    </div>
-                                    <div class="col-xs-6" style="padding-left: 125px">
-                                        <p>-</p>
-                                    </div>
-                                </div>
+                                <div class="col-md-4">
+                                    <label>Basic Info</label>
 
-                            </div>
-                            <div class="project-tab">
-                                <div class="col-xs-8">
-                                    <div class="tabbable-panel">
-                                        <div class="tabbable-line">
-                                            <ul class="nav nav-tabs ">
-                                                <li class="active">
-                                                    <a href="#tab_default_1" data-toggle="tab">
-                                                        General Information</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#tab_default_2" data-toggle="tab">
-                                                        Login History </a>
-                                                </li>
-                                               
-                                            </ul>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6  col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6  col-md-6">
+                                            <span id="email"></span>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6  col-md-6">
+                                            <label>UserName</label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6  col-md-6">
+                                            <span id="name"></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary btn-lg-3 btn-block" type="submit">Edit </button>
+
+                                    </div>
+
+
                                 </div>
+
                             </div>
 
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#home">General Information</a></li>
+                                    <li><a data-toggle="tab" href="#log">Login History</a></li>
+                                </ul>
+
+                            </div>
+
+
+                            <div class=" col-xs-12 col-sm-5 col-md-7">
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <label>FirstName</label>
+                                            </div>
+                                            <div class=" col-xs-6 col-sm-6 col-md-6">
+                                                <span id="firstName"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>MiddleName</label>
+                                            </div>
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <span id="middleName"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>LastName</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <span id="lastName"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>DateOfBirth</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <span id="dob"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <span id="gender"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <label>Country</label>
+                                            </div>
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <span id="country"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <span id="phone"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <label>Phone + Ext</label>
+                                            </div>
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <span id="phoneExt"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <span id="address"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="log" class="tab-pane fade">
+                                        <!-- <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <p>45</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <p> sowndar</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <p>sowndar@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class=" col-xs-6 col-sm-6  col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6  col-md-6">
+                                                <p>8754848578</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- <p style="padding-left: 10% ">
-                            Basic Info
-                        </p>
-                        <div class="clearfix"></div>
-                        Email
-                        <p style="padding-left:30px;">
-                            -
-                        </p> -->
+
+
+
                     </div>
+
+
+
+
+
                 </div>
             </div>
-
         </div>
     </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $(".side-nav .collapse").on("hide.bs.collapse", function () {
+                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
+            });
+            $('.side-nav .collapse').on("show.bs.collapse", function () {
+                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
+            });
+        })
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+        $('#left').click(function () {
+            $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
+        });
 
-    <script src="../js/profile.js"></script>
+        function myFunction() {
+            console.log(localStorage.getItem('token'));
+            $.ajax({
+                type: 'get',
+                url: "http://localhost:8080/usermanagement/user/" + localStorage.getItem('token'),
+                dataType: 'json',
+                success: function (user) {
+                    console.log(user.email,user.userName);
+                    document.getElementById('date').innerHTML=user.lastLoginStamp;
+                    if (user.firstName == null) {
+                        document.getElementById('firstName').innerHTML = '-';
+                    }
+                    else {
+                        document.getElementById('firstName').innerHTML = user.firstName;
+                    }
+                    if (user.middleName == null) {
+                        document.getElementById('middleName').innerHTML = '-';
+                    }
+                    else {
+                        document.getElementById('firstName').innerHTML = user.middleName;
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                    }
+                    if(user.lastName==null){
+                        document.getElementById('lastName').innerHTML = '-';
+
+                    }
+            else {
+                document.getElementById('lastName').innerHTML = user.lastName;
+
+                    }
+                    if(user.gender==null){
+                        document.getElementById('gender').innerHTML = '-';
+
+                    }
+else {
+                          document.getElementById('gender').innerHTML = user.gender;
+
+                    }
+                    if(user.dateOfBirth==null){
+                        document.getElementById('dob').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('dob').innerHTML = user.dateOfBirth;
+
+                    }
+                    if(user.country==null){
+                        document.getElementById('country').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('country').innerHTML = user.country;
+
+                    }
+                    if(user.phoneNumber==null){
+                        document.getElementById('phone').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('phone').innerHTML = user.phoneNumber;
+
+                    }
+                    if(user.phoneExt==null){
+                        document.getElementById('phoneExt').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('phoneExt').innerHTML = user.phoneExt;
+
+                    }
+                    if(user.address==null){
+                        document.getElementById('address').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('address').innerHTML = user.address;
+
+                    }
+                    if(user.email==null){
+                        document.getElementById('email').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('email').innerHTML = user.email;
+
+                    }
+                    if(user.userName==null){
+                        document.getElementById('userName').innerHTML = '-';
+
+                    }
+else {
+    document.getElementById('userName').innerHTML = user.userName;
+    document.getElementById('name').innerHTML = user.userName;
+
+
+                    }
+
+
+
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>

@@ -35,7 +35,7 @@
                         </p>
                     </div>
                     <a id="menu-toggle" data-toggle="collapsed" class="active" style="padding-top: 5px ;padding-left : 25px">
-                        <span class=" glyphicon glyphicon-chevron-right"></span>
+                        <i id="left" class="fa fa-chevron-right"></i>
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
 
@@ -84,7 +84,7 @@
                                 <li>
                                     <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
                                         "></span>
-                                        <span style="padding-left: 5px"> Logout</span></a>
+                                        <span style="padding-left: 5px" id="logout"> Logout</span></a>
                                 </li>
             
                             </ul>
@@ -205,49 +205,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".side-nav .collapse").on("hide.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
-            });
-            $('.side-nav .collapse').on("show.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
-            });
-        })
-
-
-
-
-        $("#menu-toggle").click(function (e) {
-
-            e.preventDefault();
-            $("#wrapper").toggleClass("active");
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-                $(".collapsed").on("hide.bs.collapsed", function () {
-                    $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
-                });
-                $('.collapsed').on("show.bs.collapse", function () {
-                    $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
-                });
-            })
-        });
-
-        // window.onload = function () {
-        //     var url = document.location.href,
-        //         params = url.split('?')[1].split('&'),
-        //         data = {}, tmp;
-        //     for (var i = 0, l = params.length; i < l; i++) {
-        //         tmp = params[i].split('=');
-        //         data[tmp[0]] = tmp[1];
-        //     }
-        //     console.log(data.name);
-
-        //     document.getElementById('date').innerHTML = data.name;
-        // }
-
-    </script>
+    <script src="../js/userList.js"></script>
 </body>
 
 </html>

@@ -23,11 +23,11 @@
             <div class="container-fluid">
                 <div class="navbar-header">
 
-                    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
 
-                    </button> -->
+                    </button>
                     <div class="navbar-brand">
 
 
@@ -36,7 +36,8 @@
                         </p>
                     </div>
                     <a id="menu-toggle" data-toggle="collapsed" class="active" style="padding-top: 5px ;padding-left : 25px">
-                        <span class=" glyphicon glyphicon-chevron-right"></span>
+                        <i id="left" class="fa fa-chevron-right"></i>
+
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
 
@@ -65,14 +66,18 @@
                 <ul class="side-nav nav">
                     <li>
                         <a style="color: white" href="./homepage.html"><span class="glyphicon glyphicon-dashboard
-                            " ></span>
+                            "></span>
                             <span style="padding-left: 5px"> Dashboard</span></a>
 
                     </li>
                     <li>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li>
                         <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span class="glyphicon glyphicon-user
                             "></span>
-                           <span style="padding-left: 5px">User</span>  <i class="fa fa-fw fa-angle-down pull-right" style="padding-left: 25px"></i></a>
+                            <span style="padding-left: 5px">User</span> <i class="fa fa-fw fa-angle-down pull-right"
+                                style="padding-left: 25px"></i></a>
                         <ul id="submenu-1" class="collapse">
                             <li><a href="./user.html"></i>New User</a></li>
                             <li><a href="./userslist.html"></i> User List</a></li>
@@ -87,7 +92,7 @@
                     <li>
                         <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
                             "></span>
-                            <span style="padding-left: 5px"> Logout</span></a>
+                            <span style="padding-left: 5px" id="logout"> Logout</span></a>
                     </li>
 
                 </ul>
@@ -249,50 +254,26 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-
+    <script src="../js/homePage.js"></script>
     <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".side-nav .collapse").on("hide.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
-            });
-            $('.side-nav .collapse').on("show.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
-            });
-        })
 
 
 
 
-        $("#menu-toggle").click(function (e) {
 
-            e.preventDefault();
-            $("#wrapper").toggleClass("active");
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-                $(".collapsed").on("hide.bs.collapsed", function () {
-                    $(this).prev().find(".glyphicon").eq(1).removeClass(" glyphicon-chevron-right").addClass("glyphicon-chevron-left");
-                });
-                $('.collapsed').on("show.bs.collapse", function () {
-                    $(this).prev().find(".glyphicon").eq(1).removeClass("glyphicon-chevron-left").addClass("glyphicon-chevron-right");
-                });
+        function myFunction() {
+            console.log(localStorage.getItem('token'));
+            $.ajax({
+                type: 'get',
+                url: "http://localhost:8080/usermanagement/user/" + localStorage.getItem('token'),
+                dataType: 'json',
+                success: function (user) {
+                    console.log(user);
+                    document.getElementById('date').innerHTML = user.lastLoginStamp;
+
+                }
             })
-        });
-
-        function myFunction()
-{
-  console.log(localStorage.getItem('token'));
-  $.ajax({
-      type : 'get',
-      url: "http://localhost:8080/usermanagement/user/"+localStorage.getItem('token'),
-      dataType : 'json',
-      success : function(user)
-      {
-          console.log(user);
-          
-      }
-  })
-}
+        }
 
         // window.onload = function () {
         //     var url = document.location.href,

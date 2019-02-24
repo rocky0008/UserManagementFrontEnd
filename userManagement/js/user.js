@@ -1,4 +1,10 @@
 
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap',
+            format: 'dd-mm-yyyy'
+        });
+
+
 $(document).ready(function () {
     $("#addUser").submit(function (event) {
         event.preventDefault();
@@ -71,13 +77,18 @@ $(function () {
         $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
     });
 })
-
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("active");
 });
+$('#left').click(function () {
+    $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
+});
 
-
+$('#datepicker').datepicker({
+    uiLibrary: 'bootstrap',
+    format: 'dd-mm-yyyy'
+});
 // $(".toggle-password").click(function() {
 
 //     $(this).toggleClass("fa-eye fa-eye-slash");

@@ -1,5 +1,3 @@
-import { get } from "http";
-
 $(document).ready(function () {
     $("#userLogin").submit(function (event) {
         event.preventDefault();

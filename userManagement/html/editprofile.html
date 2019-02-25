@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>New User</title>
+    <title>Edit Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css//user.css">
+    <link rel="stylesheet" type="text/css" href="../css/editprofile.css">
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
 
 
 
 </head>
 
-<body>
+<body onload=editValue()>
 
 
     <div id="wrapper">
@@ -77,7 +76,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a style="color: white" id="profilePage"><span class="glyphicon glyphicon-user
+                                    <a style="color: white" id="profilePage" ><span class="glyphicon glyphicon-user
                                         "></span>
                                         <span style="padding-left: 5px">Profile</span></a>
                                 </li>
@@ -100,10 +99,10 @@
         <div class="container-fluid ">
             <div id="page-content-wrapper" style="padding-top:10px; ">
                 <div class="page-content">
-                    <form id="addUser">
+                    <form id="editUser">
                         <div class="row">
                             <div class="well" style=" padding-top:80px; background-color: white">
-                                <p style="text-align:left;">New User
+                                <p style="text-align:left;">User Information
                                     <span style="float:right;">
                                         <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>NewUser
                                     </span>
@@ -137,7 +136,7 @@
                                                     <div class="form-group">
                                                         <label style="color: rgba(119, 113, 113, 0.472)">Last Name</label>
                                                         <input name="last_name" id="lastName" class="form-control"
-                                                            placeholder="" type="text">
+                                                            placeholder="" type="text" >
 
 
                                                     </div>
@@ -276,7 +275,7 @@
 
                                                     <div class="form-group">
                                                         <label style="color: rgba(119, 113, 113, 0.472)">Role</label>
-                                                        <select class="form-control" id="role" required>
+                                                        <select class="form-control" id="role" data-mini="true" required>
                                                             <option value="---select---">---select---</option>
                                                             <option value="Admin">Admin</option>
                                                             <option value="User">User</option>
@@ -290,30 +289,30 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="jumbotron" style="background-color:white">
-
-
-                                            <h3 style="color: rgba(119, 113, 113, 0.472)">  Photo</h3>
-                                            <label style="color: rgba(119, 113, 113, 0.472)">Acceptable image formats are jpg, jpeg, png & gif.</label>
-
-                                            <label style="color: rgba(119, 113, 113, 0.472)">Maximum image size allowed is 2MB.</label>
-                   
-                                            <div class="image-uploader" data-base-height="200" data-base-width="200">
-                                                <div class="image">
-                                                    <label>Click or drag a file to change your image</label>
-                                                    <img />
+                                            <div class="jumbotron" style="background-color:white">
+    
+    
+                                                <h3 style="color: rgba(119, 113, 113, 0.472)">  Photo</h3>
+                                                <label style="color: rgba(119, 113, 113, 0.472)">Acceptable image formats are jpg, jpeg, png & gif.</label>
+    
+                                                <label style="color: rgba(119, 113, 113, 0.472)">Maximum image size allowed is 2MB.</label>
+                       
+                                                <div class="image-uploader" data-base-height="200" data-base-width="200">
+                                                    <div class="image">
+                                                        <label>Click or drag a file to change your image</label>
+                                                        <img />
+                                                    </div>
+                                                    <input id="uploader" type="file" />
+    
                                                 </div>
-                                                <input id="uploader" type="file" />
-
+    
                                             </div>
-
+                                            <button class="btn btn-primary" type="submit">Update</button>
+                                            <button class="btn btn-primary">
+    
+                                                <a href="./editprofile.html" style="color: white">Reset </a>
+                                            </button>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Submit</button>
-                                        <button class="btn btn-primary">
-
-                                            <a href="./user.html" style="color: white">Reset </a>
-                                        </button>
-                                    </div>
 
                                 </div>
                         </div>
@@ -324,12 +323,13 @@
         </div>
     </div>
 
-   
+ 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
-    <script src="../js//user.js"></script>
+    <script src="../js/editprofile.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
 </body>
 
 </html>

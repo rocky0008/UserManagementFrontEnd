@@ -41,18 +41,18 @@
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
 
-                    <!-- <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
 
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User <b class="fa fa-angle-down"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                        <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                        <li><a href="./profile.html"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                                       
                                         <li class="divider"></li>
-                                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                        <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
                                     </ul>
                                 </li>
-                                </ul> -->
+                                </ul>
                 </div>
             </div>
         </nav>
@@ -84,7 +84,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a style="color: white" href="./profile.html"><span class="glyphicon glyphicon-user
+                        <a style="color: white" id="profilePage"><span class="glyphicon glyphicon-user
                             "></span>
                             <span style="padding-left: 5px">Profile</span></a>
                     </li>
@@ -143,7 +143,8 @@
                 </div> -->
                 <div class="row" style="padding-left: 0px">
                     <div class="well" style=" padding-top:80px ; background-color: white">
-                        <p style="text-align:left;">Welcome Admin Admin
+                        <p style="text-align:left;">Welcome
+                            <span id="userName"></span>
                             <div class="clearfix"></div>
                             you last logged in on:
                             <span id="date"></span>
@@ -165,7 +166,9 @@
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge">
+                                            <span id="total"></span>
+                                        </div>
                                         <div>Total</div>
                                     </div>
                                 </div>
@@ -187,7 +190,9 @@
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
+                                        <div class="huge">
+                                            <span id="active"></span>
+                                        </div>
                                         <div>Active</div>
                                     </div>
                                 </div>
@@ -209,7 +214,9 @@
                                         <i class="fa fa-shopping-cart fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
+                                        <div class="huge">
+                                            <span id="inActive"></span>
+                                        </div>
                                         <div>InActive</div>
                                     </div>
                                 </div>
@@ -231,7 +238,7 @@
                                         <i class="fa fa-support fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
+                                        <div class="huge">0</div>
                                         <div>Online</div>
                                     </div>
                                 </div>
@@ -255,40 +262,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <script src="../js/homePage.js"></script>
-    <script>
+  
 
 
 
 
 
-        function myFunction() {
-            console.log(localStorage.getItem('token'));
-            $.ajax({
-                type: 'get',
-                url: "http://localhost:8080/usermanagement/user/" + localStorage.getItem('token'),
-                dataType: 'json',
-                success: function (user) {
-                    console.log(user);
-                    document.getElementById('date').innerHTML = user.lastLoginStamp;
+     
 
-                }
-            })
-        }
 
-        // window.onload = function () {
-        //     var url = document.location.href,
-        //         params = url.split('?')[1].split('&'),
-        //         data = {}, tmp;
-        //     for (var i = 0, l = params.length; i < l; i++) {
-        //         tmp = params[i].split('=');
-        //         data[tmp[0]] = tmp[1];
-        //     }
-        //     console.log(data.name);
-
-        //     document.getElementById('date').innerHTML = data.name;
-        // }
-
-    </script>
+  
 </body>
 
 </html>

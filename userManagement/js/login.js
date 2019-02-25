@@ -50,7 +50,7 @@ $(document).ready(function () {
             success: function (result) {
                 console.log(result.token);
                 
-                if (result.status == "done" && result.token) {
+                if (result.status == "done" ) {
                     console.log(result.status)
 
                     console.log(Ddate);

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Profile Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -46,17 +46,18 @@
 
                     </a>
 
-                    <!-- <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul> -->
+                    <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User <b class="fa fa-angle-down"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./profile.html"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                                   
+                                    <li class="divider"></li>
+                                    <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                            </ul>
                 </div>
             </div>
         </nav>
@@ -167,8 +168,10 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button class="btn btn-primary btn-lg-3 btn-block" type="submit">Edit </button>
-
+                                      
+                                        <a class="btn btn-primary" id="editPage">
+                                            
+                                            Edit Profile</a>
                                     </div>
 
 
@@ -326,25 +329,9 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".side-nav .collapse").on("hide.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
-            });
-            $('.side-nav .collapse').on("show.bs.collapse", function () {
-                $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
-            });
-        })
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("active");
-        });
-        $('#left').click(function () {
-            $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
-        });
-
+<script src="../js/profile.js"></script>
+    <!-- <script>
+      
         function myFunction() {
             console.log(localStorage.getItem('token'));
             $.ajax({
@@ -352,7 +339,7 @@
                 url: "http://localhost:8080/usermanagement/user/" + localStorage.getItem('token'),
                 dataType: 'json',
                 success: function (user) {
-                    console.log(user.email,user.userName);
+                    console.log(user);
                     document.getElementById('date').innerHTML=user.lastLoginStamp;
                     if (user.firstName == null) {
                         document.getElementById('firstName').innerHTML = '-';
@@ -361,10 +348,10 @@
                         document.getElementById('firstName').innerHTML = user.firstName;
                     }
                     if (user.middleName == null) {
-                        document.getElementById('middleName').innerHTML = '-';
+                        document.getElementById('middleName').innerHTML = "-";
                     }
                     else {
-                        document.getElementById('firstName').innerHTML = user.middleName;
+                        document.getElementById('middleName').innerHTML = user.middleName;
 
                     }
                     if(user.lastName==null){
@@ -447,7 +434,8 @@ else {
                 }
             })
         }
-    </script>
+
+    </script> -->
 </body>
 
 </html>

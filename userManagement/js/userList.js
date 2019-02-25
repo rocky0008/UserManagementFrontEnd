@@ -28,4 +28,29 @@ $("#menu-toggle").click(function (e) {
 $('#left').click(function () {
     $(this).toggleClass('fa fa-chevron-left fa fa-chevron-right');
 });
+$('#profilePage').click(function (e)
+{
 
+location.href="file:///home/bridgelabz/userManagement/html/profile.html?id="+localStorage.getItem('token')
+})
+
+
+function getUserList()
+{
+    $.ajax({
+        type :'get',
+        url : 'http://localhost:8080/usermanagement/user/'+localStorage.getItem('token'),
+        dataType : 'json',
+        success : function(user)
+        {
+            document.getElementById('name').innerHTML=user.firstName ;
+            document.getElementById('email').innerHTML = user.email;
+            document.getElementById('role').innerHTML = user.role;
+            if(user.status==true)
+            document.getElementById('status').innerHTML = 'Active';
+            else
+            document.getElementById('status').innerHTML = 'InActive'
+        }
+
+    });
+}

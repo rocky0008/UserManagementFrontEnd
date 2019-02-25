@@ -12,7 +12,7 @@
 
 </head>
 
-<body style=" background-color: rgb(244, 246, 249)">
+<body style=" background-color: rgb(244, 246, 249)" onload=getUserList()>
 
 
     <div id="wrapper">
@@ -39,18 +39,19 @@
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
 
-                    <!-- <ul class="nav navbar-nav navbar-right">
-        
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin User <b class="fa fa-angle-down"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                                <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                                            </ul>
-                                        </li>
-                                        </ul> -->
+                    <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User
+                                <b class="fa fa-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="./profile.html"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+
+                                <li class="divider"></li>
+                                <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -59,35 +60,36 @@
 
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
-                        <ul class="side-nav nav">
-                                <li>
-                                    <a style="color: white" href="./homepage.html"><span class="glyphicon glyphicon-dashboard
-                                        " ></span>
-                                        <span style="padding-left: 5px"> Dashboard</span></a>
-            
-                                </li>
-                                <li>
-                                    <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span class="glyphicon glyphicon-user
+                <ul class="side-nav nav">
+                    <li>
+                        <a style="color: white" href="./homepage.html"><span class="glyphicon glyphicon-dashboard
                                         "></span>
-                                       <span style="padding-left: 5px">User</span>  <i class="fa fa-fw fa-angle-down pull-right" style="padding-left: 25px"></i></a>
-                                    <ul id="submenu-1" class="collapse">
-                                        <li><a href="./user.html"></i>New User</a></li>
-                                        <li><a href="./userslist.html"></i> User List</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a style="color: white" href="./profile.html"><span class="glyphicon glyphicon-user
+                            <span style="padding-left: 5px"> Dashboard</span></a>
+
+                    </li>
+                    <li>
+                        <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span class="glyphicon glyphicon-user
                                         "></span>
-                                        <span style="padding-left: 5px">Profile</span></a>
-                                </li>
-            
-                                <li>
-                                    <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
+                            <span style="padding-left: 5px">User</span> <i class="fa fa-fw fa-angle-down pull-right"
+                                style="padding-left: 25px"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="./user.html"></i>New User</a></li>
+                            <li><a href="./userslist.html"></i> User List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="color: white" id="profilePage"><span class="glyphicon glyphicon-user
                                         "></span>
-                                        <span style="padding-left: 5px" id="logout"> Logout</span></a>
-                                </li>
-            
-                            </ul>
+                            <span style="padding-left: 5px">Profile</span></a>
+                    </li>
+
+                    <li>
+                        <a style="color: white" href="./login.html"><span class="glyphicon glyphicon-off
+                                        "></span>
+                            <span style="padding-left: 5px" id="logout"> Logout</span></a>
+                    </li>
+
+                </ul>
 
                 <!-- /.navbar-collapse -->
             </nav>
@@ -119,44 +121,7 @@
                 <div class="container-fluid">
                     <div id="page-content-wrapper" style="padding-top: 10px">
 
-                        <!-- <div class="row">
-                                <div class="col-md-12">
-                                    <div class="list-group">
-                                        <h1 class="list-group-item-heading"> Welcome Admin Admin</h1>
-                                        <p class="list-group-item-text">
-                                            you last logged in on:
-                                        </p>
-                                    </div>
-                                </div>
-                            </div> -->
-                        <!-- <div class="row" style="padding-left: 0px">
-                            <div class="well" style=" padding-top:20px ; background-color: white">
-                                <button class="btn btn-info" style="height: 10px;"> New User</button>
-                            </div>
 
-                            <div class="row" style="padding-left: 15px; padding-right: 15px">
-                                <div class="well" style=" padding-top:80px ; background-color: white">
-                                 
-
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <th>Sl.No</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Dob</th>
-                                            <th>status</th>
-                                            <th>Role </th>
-                                            <th>Account</th>
-                                            <th>Action</th>
-                                        </thead>
-                                        <tbody id="data">
-                                        </tbody>
-
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="well" style="height: 60px">
                             <!-- <div class="panel">
                                 <div class="panel-heading">
@@ -172,23 +137,59 @@
 
                         <div class="row" style="padding-left: 15px; padding-right: 15px">
                             <div class="well" style=" padding-top:80px ; background-color: white">
-
-
                                 <table class="table table-bordered">
                                     <thead>
-                                        <th>Sl.No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Dob</th>
-                                        <th>status</th>
-                                        <th>Role </th>
-                                        <th>Account</th>
-                                        <th>Action</th>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Dob</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Account</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
                                     </thead>
-                                    <tbody id="data">
-                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><span id="id"></span></th>
+                                            <td><span id="name"> </span></td>
+                                            <td><span id="email"></span></td>
+                                            <td><span id="dateOfBirth"></span></td>
+                                            <td><span id="status"></span></td>
+                                            <td><span id="role"></span></td>
+                                            <td><span class="fa fa-lock" style="color: seagreen"></span></td>
 
+                                            <td>
+                                                <a href="./editprofile.html" class="fa fa-edit" style="color: #00AAFF"></a>
+                                                <a href="" style="color: red" class="glyphicon glyphicon-trash"></a></td>
+
+                                        </tr>
+                                        <!-- <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry the Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                            <td>@fat</td>
+                                        </tr> -->
+                                    </tbody>
                                 </table>
+
+
 
                             </div>
                         </div>

@@ -27,6 +27,11 @@ console.log('hihihihi');
 
 location.href="file:///home/bridgelabz/userManagement/html/editprofile.html?id="+localStorage.getItem('token')
 })
+$('#logout').click(function (e)
+{
+    localStorage.removeItem('token')
+});
+
 
 $('#profilePage').click(function (e)
 {
@@ -135,6 +140,25 @@ document.getElementById('name').innerHTML = user.userName;
 
 
 
+        }
+    })
+
+
+    $.ajax({
+        type : 'GET',
+        url : 'http://localhost:8080/usermanagement/userLogin/'+localStorage.getItem('token'),
+        dataType : 'json',
+        success : function(userLogin)
+        {
+            console.log(userLogin);
+            
+            for (let index = 0; index < userLogin.length; index++) {
+            //    document.getElementById('lastLoginStamp').innerHTML=userLogin[index].lastLoginStamp;
+            console.log(userLogin[index].lastLoginStamp);
+            
+           // document.getElementById("lastLoginStamp").innerHTML = userLogin[index].lastLoginStamp;
+           $("#lastLoginStamp").append('> ' + userLogin[index].lastLoginStamp + '<br>');
+            }
         }
     })
 }

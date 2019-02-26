@@ -33,23 +33,37 @@ $('#profilePage').click(function (e)
 
 location.href="file:///home/bridgelabz/userManagement/html/profile.html?id="+localStorage.getItem('token')
 })
+$('#logout').click(function (e)
+{
+    localStorage.removeItem('token')
+});
 
 
 function getUserList()
 {
     $.ajax({
         type :'get',
-        url : 'http://localhost:8080/usermanagement/user/'+localStorage.getItem('token'),
+        url : 'http://localhost:8080/usermanagement/user',
         dataType : 'json',
         success : function(user)
         {
-            document.getElementById('name').innerHTML=user.firstName ;
-            document.getElementById('email').innerHTML = user.email;
-            document.getElementById('role').innerHTML = user.role;
-            if(user.status==true)
-            document.getElementById('status').innerHTML = 'Active';
-            else
-            document.getElementById('status').innerHTML = 'InActive'
+            console.log( user,user.length);
+            
+           for (let index = 0; index < user.length; index++) {
+            console.log(index);
+            
+            $("#name").append("<td>" + user[index].userName + "</td>");
+            $("#role").append("<td>" + user[index].role + "</td>");
+            $("#newRow").append("<tbody><tr><td></td></tr></tbody>");
+
+           }
+            // document.getElementById('name').innerHTML=user.firstName ;
+            // document.getElementById('email').innerHTML = user.email;
+            // document.getElementById('role').innerHTML = user.role;
+            // if(user.status==true)
+            // document.getElementById('status').innerHTML = 'Active';
+            // else
+            // document.getElementById('status').innerHTML = 'InActive'
         }
 
     });

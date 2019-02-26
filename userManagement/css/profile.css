@@ -434,3 +434,13 @@ body{
     background-color: #00AAFF;
     border-color: #00a0f0;
 }
+
+.profile-image
+{
+        background-image: url(../photo/backgroundImage.jpeg);
+        height: 240px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+}

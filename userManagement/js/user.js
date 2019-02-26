@@ -428,4 +428,9 @@ this.document.createElement("canvas")));
         location.href="file:///home/bridgelabz/userManagement/html/profile.html?id="+localStorage.getItem('token')
         })
 
-       
+        $('#logout').click(function (e)
+        {
+            localStorage.removeItem('token')
+        });
+        
+        

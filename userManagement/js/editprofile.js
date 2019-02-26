@@ -89,6 +89,11 @@ $('#datepicker').datepicker({
     uiLibrary: 'bootstrap',
     format: 'dd-mm-yyyy'
 });
+$('#logout').click(function (e)
+{
+    localStorage.removeItem('token')
+});
+
 
 $('#profilePage').click(function (e)
 {

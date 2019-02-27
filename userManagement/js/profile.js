@@ -84,8 +84,12 @@ else {
 
             }
 else {
-document.getElementById('dob').innerHTML = user.dateOfBirth;
+    var datearray = user.dateOfBirth.split("-");
 
+    var newdate = datearray[2] + '-' + datearray[1] + '-' + datearray[0];
+    console.log('date ',newdate);
+    
+    document.getElementById('dob').innerHTML =newdate ;
             }
             if(user.country==null){
                 document.getElementById('country').innerHTML = '-';

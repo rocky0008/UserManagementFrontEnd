@@ -245,3 +245,77 @@
     margin: 10px;
     padding: 0px;
   }
+
+  .inforide {
+    border: 1px solid rgb(179, 179, 179);
+    
+    background-color: white;
+    border-radius: 8px;
+    height: 80px;
+    
+    }
+    .one a{
+    text-align: center;
+        float: left;
+        width: 60px;
+        height: 60px;
+        border: 1px ;
+        border-radius: 100%;
+    /*space between*/margin-left: 15px;
+    margin-top: 10px;
+    background-color: #009DDD; 
+    
+    } 
+    .one a i{
+        font-size: 20px;
+    line-height: 58px;
+        color: #f1f1f1;
+    }
+    .two a{
+    text-align: center;
+        float: left;
+        width: 60px;
+        height: 60px;
+        border: 1px ;
+        border-radius: 100%;
+    /*space between*/margin-left: 15px;
+    margin-top: 10px;
+    background-color: #00B98F; 
+    
+    } 
+    .two a i{
+        font-size: 20px;
+    line-height: 58px;
+        color: #f1f1f1;
+    }
+    .three a{
+    text-align: center;
+        float: left;
+        width: 60px;
+        height: 60px;
+        border: 1px ;
+        border-radius: 100%;
+    /*space between*/margin-left: 15px;
+    margin-top: 10px;
+    background-color: #FF3F21; 
+    
+    } 
+    .three a i{
+        font-size: 20px;
+    line-height: 58px;
+        color: #f1f1f1;
+    }
+    .fontsty {
+    margin-right: -15px;
+    }
+    .fontsty h2{
+    color: #6E6E6E;
+    font-size: 20px;
+    margin-right: 220px;
+    
+    }
+    .fontsty h4{
+    color: #6E6E6E;
+    font-size: 18px;
+    margin-right: 220px;
+    }

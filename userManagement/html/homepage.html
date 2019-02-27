@@ -10,7 +10,7 @@
 
     <link href="../css/homepage.css" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body onload=myFunction()>
@@ -40,19 +40,20 @@
 
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
-
+<!-- 
                     <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
 
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User <b class="fa fa-angle-down"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="./profile.html"><i class="fa fa-fw fa-user"></i> Profile</a></li>
-                                       
-                                        <li class="divider"></li>
-                                        <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                                    </ul>
-                                </li>
-                                </ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User
+                                <b class="fa fa-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="./profile.html"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+
+                                <li class="divider"></li>
+                                <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
                 </div>
             </div>
         </nav>
@@ -63,36 +64,42 @@
 
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
-                    <ul class="side-nav nav">
-                        <li>
-                            <a style="color: white " href="./homepage.html"><span style="padding-left: 25px"  class="glyphicon glyphicon-dashboard
+                <ul class="side-nav nav">
+                    <li>
+                        <a style="color: white " href="./homepage.html"><span style="padding-left: 25px" class="glyphicon glyphicon-dashboard
                                             "></span>
-                                <span style="padding-left: 5px"> Dashboard</span></a>
-    
-                        </li>
-                        <li>
-                            <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span style="padding-left: 25px" class="glyphicon glyphicon-user
+                            <span style="padding-left: 5px"> Dashboard</span></a>
+
+                    </li>
+                    <li>
+                        <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span style="padding-left: 25px"
+                                class="glyphicon glyphicon-user
                                             "></span>
-                                <span style="padding-left: 5px">User</span> <i  class="fa fa-fw fa-angle-down pull-right"
-                                    style="padding-left: 25px"></i></a>
-                            <ul id="submenu-1" class="collapse">
-                                <li><a  href="./user.html"></i>New User</a></li>
-                                <li><a href="./userslist.html"></i> User List</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a style="color: white" id="profilePage"><span style="padding-left: 25px" class="glyphicon glyphicon-user
+                            <span style="padding-left: 5px">User</span> <i class="fa fa-fw fa-angle-down pull-right"
+                                style="padding-left: 25px"></i></a>
+                        <ul id="submenu-1" class="collapse">
+                            <li><a href="./user.html" style="padding-right: 5px">
+                                    <span style="padding-left: 25px">New User</span></a>
+                                </a></li>
+                            <li><a href="./userslist.html"></i>
+                                    <span style="padding-left: 25px">Users List</span></a>
+
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="color: white" id="profilePage"><span style="padding-left: 25px" class="glyphicon glyphicon-user
                                             "></span>
-                                <span style="padding-left: 5px">Profile</span></a>
-                        </li>
-    
-                        <li>
-                            <a style="color: white" href="./login.html"><span style="padding-left: 25px" class="glyphicon glyphicon-off
+                            <span style="padding-left: 5px">Profile</span></a>
+                    </li>
+
+                    <li>
+                        <a style="color: white" href="./login.html"><span style="padding-left: 25px" class="glyphicon glyphicon-off
                                             "></span>
-                                <span style="padding-left: 5px" id="logout"> Logout</span></a>
-                        </li>
-    
-                    </ul>
+                            <span style="padding-left: 5px" id="logout"> Logout</span></a>
+                    </li>
+
+                </ul>
 
                 <!-- /.navbar-collapse -->
             </nav>
@@ -126,149 +133,86 @@
             </div>
         </div> -->
         <div class="container-fluid">
-            <div id="page-content-wrapper" style="padding-top: 10px">
-
-                <!-- <div class="row">
-                    <div class="col-md-12">
-                        <div class="list-group">
-                            <h1 class="list-group-item-heading"> Welcome Admin Admin</h1>
-                            <p class="list-group-item-text">
-                                you last logged in on:
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="row" style="padding-left: 0px">
-                    <div class="well" style=" padding-top:80px ; background-color: white">
-                        <p style="text-align:left;">Welcome
-                            <span id="userName"></span>
-                            <div class="clearfix"></div>
-                            you last logged in on:
-                            <span id="date"></span>
-                            <span style="float:right;">
-                                <a href="./homepage.html"><i class="fa fa-home "></i>Home / </a>Dashboard
-                            </span>
-                        </p>
-
-                    </div>
-                </div>
-
-
+            <div id="page-content-wrapper" style="padding-top: 40px">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                            <span id="total"></span>
-                                        </div>
-                                        <div>Total</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                            <span id="active"></span>
-                                        </div>
-                                        <div>Active</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                            <span id="inActive"></span>
-                                        </div>
-                                        <div>InActive</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">0</div>
-                                        <div>Online</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a> -->
-                        </div>
+                    <div class="well" style=" padding-top: 5px; height: 75px; background-color: white">
+                        <p style="text-align:left; padding-top: 15px;">
+                            Welcome Admin
+                            <span style="float:right;"> <a href=""><i class="fa fa-home "></i>Home</a> / <a href="">Dashboard</a></span>
+                        </p>
+                        <span style="color: #6E6E6E">
+                            <p> You last logged in on: <span id="date"></span></p>
+                        </span>
                     </div>
                 </div>
-                <!-- /#page-wrapper -->
+                <div class="row">
+
+                    <!-- Icon Cards-->
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                        <div class="inforide">
+                            <div class="row">
+
+                                <div class="col-lg-3 col-md-4 col-sm-4 col-4 one">
+                                    <a href="#"> <i class="material-icons " style="font-size: 35px">person_outline</i></a>
+
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                    <h4>Total</h4>
+                                    <h2> <span id="total" style="color: #00AAFF"></span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                        <div class="inforide">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-4 col-4 two">
+                                    <a href="#"> <i class="material-icons " style="font-size: 35px">done</i></a>
+
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                    <h4>active</h4>
+                                    <h2> <span id="active" style="color: #00AAFF"></span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-2 mt-4">
+                        <div class="inforide">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-4 col-4 three">
+                                    <a href="#"> <i class="glyphicon glyphicon-ban-circle " style="font-size: 35px"></i></a>
+
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-8 col-8 fontsty">
+                                    <h4>Inactive</h4>
+                                    <h2> <span id="inActive" style="color: #00AAFF"></span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <script src="../js/homePage.js"></script>
-  
+        <script src="../js/homePage.js"></script>
 
 
 
 
 
-     
 
 
-  
+
+
+
 </body>
 
 </html>

@@ -8,6 +8,7 @@
     <script language="javascript" type="text/javascript"></script>
 
     <link href="../css/userlist.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 
 
 </head>
@@ -39,7 +40,7 @@
                         <!-- <svg-icon><src  href="sprite.svg#si-glyph-arrow-right" /></svg-icon> -->
                     </a>
 
-                    <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
+                    <!-- <ul class="nav navbar-nav navbar-right" style="padding-left:900px ">
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">Admin User
@@ -51,7 +52,7 @@
                                 <li><a href="./login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </nav>
@@ -62,19 +63,25 @@
                 <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
                 <ul class="side-nav nav">
                     <li>
-                        <a style="color: white " href="./homepage.html"><span style="padding-left: 25px"  class="glyphicon glyphicon-dashboard
+                        <a style="color: white " href="./homepage.html"><span style="padding-left: 25px" class="glyphicon glyphicon-dashboard
                                         "></span>
                             <span style="padding-left: 5px"> Dashboard</span></a>
 
                     </li>
                     <li>
-                        <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span style="padding-left: 25px" class="glyphicon glyphicon-user
+                        <a style="color: white" href="#" data-toggle="collapse" data-target="#submenu-1"><span style="padding-left: 25px"
+                                class="glyphicon glyphicon-user
                                         "></span>
-                            <span style="padding-left: 5px">User</span> <i  class="fa fa-fw fa-angle-down pull-right"
+                            <span style="padding-left: 5px">User</span> <i class="fa fa-fw fa-angle-down pull-right"
                                 style="padding-left: 25px"></i></a>
                         <ul id="submenu-1" class="collapse">
-                            <li><a href="./user.html"></i>New User</a></li>
-                            <li><a href="./userslist.html"></i> User List</a></li>
+                            <li><a href="./user.html" style="padding-right: 5px">
+                                    <span style="padding-left: 25px">New User</span></a>
+                                </a></li>
+                            <li><a href="./userslist.html"></i>
+                                    <span style="padding-left: 25px">Users List</span></a>
+
+                                </a></li>
                         </ul>
                     </li>
                     <li>
@@ -127,9 +134,12 @@
                                 <div class="panel-heading">
                                     <div class="panel-title">
                                         hihihih -->
-                            <span>
-                                <button class="btn btn-info glyphicon glyphicon-user col-xs-2">New User</button>
-                            </span>
+                            <button class="btn btn-primary" type="submit" id="userPage">
+                                <span class="glyphicon glyphicon-user">
+                                    New User
+                                </span>
+                            </button>
+
                             <!-- </div>
                                 </div>
                             </div> -->
@@ -137,7 +147,7 @@
 
                         <div class="row" style="padding-left: 15px; padding-right: 15px">
                             <div class="well" style=" padding-top:80px ; background-color: white">
-                                <table class="table table-bordered">
+                                <!-- <table id="table" class="display">
                                     <thead>
                                         <tr>
                                             <th scope="col">Id</th>
@@ -167,6 +177,24 @@
                                         </tr>
                              
                                     </tbody>
+                                </table> -->
+                                <table id="table" class='display table table-bordered '>
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+
+                                            <th>Dob</th>
+
+                                            <th>Status</th>
+                                            <th>Role</th>
+                                            <th>Account</th>
+
+                                        </tr>
+                                    </thead>
+                                    <!-- <tbody>
+                                    </tbody> -->
                                 </table>
 
 
@@ -187,6 +215,7 @@
 
 
     <script src="../js/userList.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </body>
 
 </html>

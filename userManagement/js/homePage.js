@@ -51,7 +51,7 @@ function myFunction() {
         dataType: 'json',
         success: function (user) {
             console.log(user);
-            document.getElementById('date').innerHTML = user.lastLoginStamp.toTimeString;
+            document.getElementById('date').innerHTML = user.lastLoginStamp;
             document.getElementById('userName').innerHTML = user.userName;
 
         }

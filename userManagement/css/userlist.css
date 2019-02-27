@@ -181,3 +181,12 @@
     color: #fff;
     padding-right: 15px;
 }
+
+.btn-primary {
+    background-color: #00AAFF;
+    border-color: #00a0f0;
+  }
+  table.dataTable td > i {
+    margin-left: 0.5em;
+    opacity: 0.3;
+}

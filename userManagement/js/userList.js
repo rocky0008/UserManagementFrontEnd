@@ -33,38 +33,48 @@ $('#profilePage').click(function (e)
 
 location.href="file:///home/bridgelabz/userManagement/html/profile.html?id="+localStorage.getItem('token')
 })
+
+
 $('#logout').click(function (e)
 {
     localStorage.removeItem('token')
 });
 
+$('#userPage').click(function(e)
+{
+    location.href='file:///home/bridgelabz/userManagement/html/user.html'
+})
+
 
 function getUserList()
 {
-    $.ajax({
-        type :'get',
-        url : 'http://localhost:8080/usermanagement/user',
-        dataType : 'json',
-        success : function(user)
-        {
-            console.log( user,user.length);
-            
-           for (let index = 0; index < user.length; index++) {
-            console.log(index);
-            
-            $("#name").append("<td>" + user[index].userName + "</td>");
-            $("#role").append("<td>" + user[index].role + "</td>");
-            $("#newRow").append("<tbody><tr><td></td></tr></tbody>");
+    $(document).ready( function () {
+        var table = $('#table').DataTable({
+               "sAjaxSource": "http://localhost:8080/usermanagement/userList",
+               "sAjaxDataProp": "",
+               "order": [[ 0, "asc" ]],
+               "aoColumns": [
+                     { "mData": "id"},
+                     { "mData": "userName" },
+                     { "mData": "email" },
+                     { "mData": "dateOfBirth" },
+                     
+                     { "mData": "status" },
+                     { "mData": "role" },
+                     {render : editIcon}
+               ]
+        })
+   });
 
-           }
-            // document.getElementById('name').innerHTML=user.firstName ;
-            // document.getElementById('email').innerHTML = user.email;
-            // document.getElementById('role').innerHTML = user.role;
-            // if(user.status==true)
-            // document.getElementById('status').innerHTML = 'Active';
-            // else
-            // document.getElementById('status').innerHTML = 'InActive'
-        }
 
-    });
+   var editIcon = function ( data, type, row ) {
+    if ( type === 'display' ) {
+       // console.log(data , mData);
+        
+        return ' <a href="./editprofile.html" class="fa fa-pencil"/>';
+    }
+
+  
+    
+};
 }
